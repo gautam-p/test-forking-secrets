@@ -27,3 +27,14 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: get pr number
         run: cat pr_number
+
+  
+  new-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Added a new thing here!"
+          mysecret=${{ secrets.NOT_REALLY_SECRET }}
+          echo length of secret is: ${#mysecret}
+          echo $mysecret | sed 's/-/_/g'
+ 
